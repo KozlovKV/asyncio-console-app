@@ -31,11 +31,14 @@
 < error
 < error command
 < 
-> put mmm 0.0 555444 <ок
+> put mmm 0.0 555444 
+< ок
 < 
-> put mmm 54.9 555444 <ок
+> put mmm 54.9 555444 
+< ок
 < 
 > get mmm
-< mmm 11.0 628930 <mmm 0.0 555444
+< mmm 11.0 628930 
+< mmm 0.0 555444
 < 
 ```
