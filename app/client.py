@@ -21,8 +21,12 @@ class Client:
         if len(args) != 2:
             self.error()
             return
-        result = self.server.get(args)
-        print(result)
+        data = self.server.get(args)
+        result = []
+        for note in data:
+            for values in note[1]:
+                result.append(f'{note[0]} {values[0]} {values[1]}')
+        print('\n'.join(result))
 
     def put(self, args):
         if len(args) != 4:

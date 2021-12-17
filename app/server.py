@@ -20,11 +20,16 @@ class Server:
             return data
 
     def get(self, args):
+        data = self.data
+        result = []
         if args[1] == '*':
-            return self.data.values()
-        if self.data.get(args[1], 'error') == 'error':
+            for key in data.keys():
+                result.append([key, data[key]])
+        elif data.get(args[1], 'error') == 'error':
             return '\nerror\nerror command\n'
-        return self.data.get(args[1])
+        else:
+            result.append([args[1], data[args[1]]])
+        return result
 
     def put(self, args):
         new_data = self.data
